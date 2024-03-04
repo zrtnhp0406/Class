@@ -19,7 +19,7 @@ thời đảm bảo các thuật toán đều được chạy trên 1 dữ liệ
       ~ hai code dùng hàm sẵn (c++, numpy)
           - Thời gian nhanh ổn định (mặc dù numpy chậm nhưng việc này là do python không xử lý tính toán mạnh bằng c++)
           - Cài đặt rất đơn giản (chỉ gọi hàm)
-          - Tiết kiếm khá nhiều tài nguyên máy tính 
+          - Tiết kiệm khá nhiều tài nguyên máy tính 
 
 * So sánh
 - Qua quá trình thực nghiệm, thu được kết quả các thuật toán có độ phức tạp bất ổn định (Quick sort, Heap sort) cho kết quả tốt hơn so với thuật toán ổn
