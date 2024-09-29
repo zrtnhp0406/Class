@@ -5,10 +5,9 @@ using namespace std;
 struct SinCalculator {
     double x;      // Gia tri dau vao
     double sinx;  // Ket qua tinh toan
-    double threshold; // Nguong dung tinh toan
 
     // Ham khoi tao
-    SinCalculator(double value) : x(value), sinx(0), threshold(0.00001) {}
+    SinCalculator(double value) : x(value), sinx(0) {}
 
     // Ham tinh sin(x) bang chuoi Taylor
     void calculate() {
@@ -16,12 +15,11 @@ struct SinCalculator {
         int sign = 1.0;      // Bien de theo doi dau
         double tmp = x;         // Gia tri hien tai
 
-        while (abs(tmp) >= threshold) { // Neu gia tri hien tai lon hon nguong
+        while (abs(tmp) >= 0.00001) { // Neu gia tri hien tai lon hon nguong
             sinx += tmp * sign; // Cong vao ket qua
-            n++;                 // Tang bien dem
-            // Tinh toan hang tiep theo
-            tmp = tmp * x * x / ((2 * n) * (2 * n + 1));
             sign *= -1;       // Dao dau
+            // Tinh toan hang tiep theo
+            tmp *= x * x / (4*(++n)*n+2*n);
         }
     }
 
