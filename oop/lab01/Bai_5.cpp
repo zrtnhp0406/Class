@@ -61,11 +61,22 @@ int dem(info ngay) {
     return soThuTu;
 }
 
+bool check(info day){
+        if(!(0<day.thang && day.thang <=12)) return true;
+        if(!(0<day.nam)) return true;
+        if(!(0<day.ngay && day.ngay<=calc(day.thang,day.nam))) return true;
+        return false;
+}
+
 int main() {
     info ngay;
     cout << "Nhap ngay, thang, nam: ";
     cin >> ngay.ngay >> ngay.thang >> ngay.nam;
 
+    if(check(ngay)){
+        cout<<"loi.";
+        return false;
+    }
     info ngaySau = ngayTiepTheo(ngay);
     info ngayTruoc = ngayTruocDo(ngay);
     int so = dem(ngay);
