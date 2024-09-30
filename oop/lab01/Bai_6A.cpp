@@ -51,7 +51,7 @@ int main() {
         }
 
         // Loai bo phan tu dau tien trong cua so ra khoi hashB
-        hashB = hashB - powbase[n - 1] * B[i];
+        hashB = hashB - powbase[n - 1] * B[i-n+1];
     }
 
     // Xuat so luong xuat hien va cac chi so
